@@ -1,24 +1,17 @@
-import React , { useState , useEffect } from 'react'
-import axios from 'axios'
+import React , { useState , useEffect } from 'react' ; 
+import axios from 'axios' ; 
+import UserCard from './UserCard' ; 
+import { Card } from 'react-bootstrap';
 
 
-export default function UserGrid() {
-    const [users , setUsers ]  = useState([]) ; 
-    const [isLoading , setIsLoading ] = useState(true) ; 
-
-    useEffect( () => {
-        const fetchUsers = async () => {
-            const result = await axios(`https://reqres.in/api/users?page=1`) ;
-            console.log(result.data);
-        }
-        
-        
-        fetchUsers();
-    } , [] ) 
-
+export default function UserGrid({users}) {
+   
     return (
-        <div>
-            check
+        
+         <div className="row" >
+            {
+                  users.map((user) => <UserCard user={user}/> )
+            }
         </div>
     )
 }
