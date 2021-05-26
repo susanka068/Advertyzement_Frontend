@@ -1,4 +1,4 @@
-import React , { useEffect , useState } from 'react'
+import React , { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import Header from './components/Header'
@@ -24,8 +24,8 @@ function App() {
             err => {
               if(err.response.status === 404 )
               {
-                  throw new Error("resouce not found") ; 
                   alert.show("404 , resouce not fuond ")
+                  throw new Error("resouce not found") ; 
               }
               throw err ; 
             }
@@ -46,7 +46,7 @@ function App() {
         <Header fetchUsers={fetchUsers} setIsLoading={setIsLoading} />
       <div className="container" >
         {
-          (isLoading==2)?<img src={Spinner} alt={"loading..."} style={{ "width" :"80px" , margin:"auto" , display:"block" }} />:<UserGrid users={users} />
+          (isLoading===2)?<img src={Spinner} alt={"loading..."} style={{ "width" :"80px" , margin:"auto" , display:"block" }} />:<UserGrid users={users} />
         }        
       </div>
     </div>
