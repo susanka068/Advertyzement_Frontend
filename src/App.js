@@ -1,15 +1,14 @@
-import Navbar from 'react-bootstrap/Navbar'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
+
+import Header from './components/Header'
+import UserGrid from './components/UserGrid'
 
 function App() {
   return (
     <div>
-     <Navbar bg="dark">
-      <Navbar.Brand style={{ fontSize: 65 } }>
-        Sushi-book
-      </Navbar.Brand>
-    </Navbar>
+        <Header />
+        <UserGrid />
     </div>
   );
 }
