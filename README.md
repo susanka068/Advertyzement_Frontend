@@ -15,6 +15,13 @@ Create a web application using create-react-app:
 You can design your own UI for this, make it simple.
 
 
+### Deployment
+
+This Application is hosted on [netlify](https://serene-roentgen-7d8925.netlify.app/).
+
+Link : https://serene-roentgen-7d8925.netlify.app/
+
+
 ### Instructions to run on your local system:
 
 1. clone this repository
