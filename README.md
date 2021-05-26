@@ -32,4 +32,4 @@ npm start
 4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
-![preview](./public/Screenshot from 2021-05-26 23-12-10.png)
+![preview](/public/Screenshot%20from%202021-05-26%2023-12-10.png)
