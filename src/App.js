@@ -9,18 +9,35 @@ import axios from 'axios' ;
 
 import './App.css' ; 
 
+import { useAlert } from 'react-alert'
+
 function App() {
 
   const [users , setUsers ]  = useState([]) ; 
   const [isLoading , setIsLoading ] = useState(1) ; // isLoading = 1 -> means loading isn't initited , isLoading = 2 -> means loading is initited but not finished , isLoading = 3 -> means loading is finished .
 
-
+  const alert = useAlert()
  
       const fetchUsers = async () => {
-          const result = await axios(`https://reqres.in/api/users?page=1`) ;
+        try{
+          const result = await axios(`https://reqres.in/api/users?page=1`).catch(
+            err => {
+              if(err.response.status === 404 )
+              {
+                  throw new Error("resouce not found") ; 
+                  alert.show("404 , resouce not fuond ")
+              }
+              throw err ; 
+            }
+          ) ;
           console.log(result.data);
           setUsers(result.data.data) ; 
           setIsLoading(3) ;
+        }
+        catch(err)
+        {
+          alert.show("404 , resouce not found , check the endpoint again ");
+        }
       }
 
 
